@@ -1,0 +1,137 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #ffebcd; /* Fondo color crema */
+    margin: 0;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+h1 {
+    color: #ff69b4; /* Color rosado */
+    font-size: 36px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.message {
+    font-size: 18px;
+    color: #34495e;
+    margin-top: 20px;
+    line-height: 1.6;
+    animation: fadeIn 2s ease-out forwards;
+}
+
+#flower-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.flower {
+    width: 60px;
+    height: 60px;
+    background-color: yellow;
+    border-radius: 50%;
+    margin: 10px;
+    position: relative;
+    animation: grow 2s ease-out forwards;
+}
+
+.flower::before, .flower::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: yellow;
+    border-radius: 50%;
+}
+
+.flower::before {
+    top: -50px;
+    left: 0;
+}
+
+.flower::after {
+    top: 0;
+    left: -50px;
+}
+
+.flower.red {
+    background-color: red;
+}
+
+.flower.red::before, .flower.red::after {
+    background-color: red;
+}
+
+#hearts-container {
+    position: relative;
+    height: 200px;
+    margin-top: 30px;
+}
+
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    transform: rotate(-45deg);
+    animation: floatUp 5s infinite ease-in-out;
+}
+
+.heart::before, .heart::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -15px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 15px;
+}
+
+.heart:nth-child(1) { left: 20%; animation-delay: 0s; }
+.heart:nth-child(2) { left: 50%; animation-delay: 2s; }
+.heart:nth-child(3) { left: 70%; animation-delay: 4s; }
+.heart:nth-child(4) { left: 90%; animation-delay: 6s; }
+
+@keyframes grow {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes floatUp {
+    0% {
+        bottom: 0;
+        opacity: 1;
+    }
+    100% {
+        bottom: 200px;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
